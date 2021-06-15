@@ -1,0 +1,687 @@
+/*------------------------------------*\
+  #GENERIC
+\*------------------------------------*/
+
+/*
+    Generic: Page
+    ---
+    Global page styles + universal box-sizing:
+*/
+
+html {
+    font-size: 16px;
+    line-height: 1.5;
+    font-family: skolar-sans-latin, sans-serif;
+    /* font-family: arial; */
+    color: black;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit;
+  }
+  
+  /*
+   * Remove text-shadow in selection highlight:
+   * https://twitter.com/miketaylr/status/12228805301
+   *
+   * Customize the background color to match your design.
+   */
+  
+  ::selection {
+    background: #3385ff;
+    color: white;
+    text-shadow: none;
+  }
+  
+  /*------------------------------------*\
+    #Elements
+  \*------------------------------------*/
+  
+  /*
+      Elements: Images
+      ---
+      Default markup for images to make them responsive
+  */
+  
+  img {
+    max-width: 100%;
+    vertical-align: top;
+  }
+  
+  /*
+      Elements: typography
+      ---
+      Default markup for typographic elements
+  */
+  
+  h1,
+  h2,
+  h3 {
+    font-weight: 600;
+  }
+  
+  h1 {
+    font-size: 28px;
+    margin: 0;
+  }
+  
+  h2 {
+    font-size: 32px;
+    line-height: 40px;
+  }
+  
+  h3 {
+    font-size: 26px;
+    line-height: 32px;
+  }
+  
+  h4,
+  h5,
+  h6 {
+    font-size: 20px;
+    line-height: 24px;
+  }
+  
+  p,
+  ol,
+  ul,
+  dl,
+  table,
+  address,
+  figure {
+    margin: 0px;
+  }
+  
+  ul,
+  ol {
+    padding-left: 24px;
+  }
+  
+  li ul,
+  li ol {
+    margin-bottom: 0;
+  }
+  
+  blockquote {
+    font-style: normal;
+    font-size: 23px;
+    line-height: 32px;
+    margin: 0 0 24px;
+  }
+  
+  blockquote * {
+    font-size: inherit;
+    line-height: inherit;
+  }
+  
+  figcaption {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    margin-top: 8px;
+  }
+  
+  hr {
+    border: 0;
+    height: 1px;
+    background: LightGrey;
+    margin: 0 0 24px;
+  }
+  
+  a {
+    color: #2E3133;
+    transition: all 0.1s ease-in-out;
+  }
+  
+  a:visited,
+  a:active {
+    color: #2E3133;
+  }
+  
+  a:hover,
+  a:focus {
+    color: #2E3133;
+  }
+  input[type='number'] {
+    width: 80px;
+    border-left: none;
+    border-top: none;
+    border-right: none;
+    border-color: #1589ec;
+    border-bottom-width: 2px;
+    font-family: 'Skolar Sans Latin';
+    font-size: 20px;
+    color: #2e3133;
+  }
+  
+  input[type='number']:focus {
+    outline: none;
+  }
+  
+/*------------------------------------*\
+  #OBJECTS
+\*------------------------------------*/
+.o-underline {
+    display: inline;
+    border-style: solid;
+    border-top: none;
+    padding-bottom: 1px;
+    border-left: none;
+    border-right: none;
+    color: #1589ec;
+    border-color: #1589ec;
+    border-bottom-width: 2px;
+    font-size: 20px;
+    font-weight: 600;
+  }
+  
+.o-center-svg{
+    top: .2em;
+    position: relative;
+  }
+.o-text-align-center {
+    text-align: center;
+  }
+  /*
+    Objects: Row
+    ---
+    Creates a horizontal row that stretches the viewport and adds padding around children
+*/
+
+.o-row {
+    position: relative;
+    padding: 32px 32px 0;
+    display: flow-root;
+  }
+  
+  /* color modifiers */
+  
+  /* intro needs a larger z-index to pull the image over the next row */
+  
+  .o-row--intro {
+    /* z-index: 10; */
+  }
+  
+  /* size modifiers */
+  
+  .o-row--md {
+    padding-bottom: 24px;
+  }
+  .o-row--lg {
+    padding: 16px 16px 12px 16px;
+    display: flow-root;
+    position: relative;
+  }
+  
+  .o-row--xl {
+    padding-top: 16px;
+    padding-right: 250px;
+    padding-left: 250px;
+  }
+  @media (min-width: 768px) {
+    .o-row--lg {
+      padding-bottom: 24px;
+    }
+  }
+  @media (min-width:1024px){
+    .o-row{
+        padding-top: 16px;
+        padding-right: 100px !important;
+        padding-left: 100px !important;
+
+    }
+  }
+  @media (min-width:1440px){
+    .o-row{
+        padding-top: 16px;
+        padding-right: 390px !important;
+        padding-left: 390px !important;
+
+    }
+  }
+  /*
+    Objects: Container
+    ---
+    Creates a horizontal container that sets de global max-width
+*/
+
+.o-container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: 79.5em; /* 90 * 16px = 1440px */
+  }
+  /*
+    Component: header
+    ---
+    Main header of the website
+*/
+/*
+    Objects: List
+    ---
+    Small reusable object to remove default list styling from lists
+*/
+
+.o-list {
+    list-style: none;
+    padding: 0;
+  }
+  /*
+    Object: Button reset
+    ---
+    Small button reset object
+*/
+
+.o-button-reset {
+    border: None;
+    margin: 0;
+    padding: 0;
+    width: auto;
+    overflow: visible;
+    background: transparent;
+  
+    /* inherit font & color from ancestor */
+    color: inherit;
+    font: inherit;
+  
+    /* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
+    line-height: normal;
+  
+    /* Corrects font smoothing for webkit */
+    -webkit-font-smoothing: inherit;
+    -moz-osx-font-smoothing: inherit;
+  
+    /* Corrects inability to style clickable `input` types in iOS */
+    -webkit-appearance: none;
+  }
+  form{
+    padding-bottom: 16px;
+  }
+  /*------------------------------------*\
+  #COMPONENTS
+\*------------------------------------*/
+
+/*
+    Component: mobile nav
+    ---
+    Dedicated mobile nav component
+*/
+
+.c-mobile-nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 100vh;
+    pointer-events: none;
+  }
+  
+  .has-mobile-nav .c-mobile-nav {
+    pointer-events: auto;
+  }
+  
+  .c-mobile-nav__header {
+    display: flex;
+    right: 5;
+    /* align-items: center; */
+    /* justify-content: space-between; */
+  }
+  
+  .c-mobile-nav__bg {
+    opacity: 0.5;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+  }
+  
+  .has-mobile-nav .c-mobile-nav__bg {
+  }
+  
+  .c-mobile-nav__body {
+    position: relative;
+    padding: 16px;
+    height: 100vh;
+    width: 50vw;
+    background-color: #edf3f7;
+    transform: translateX(200%);
+    transition: 0.25s ease;
+  }
+  
+  .has-mobile-nav .c-mobile-nav__body {
+    transform: translateX(100%);
+  }
+  
+  @media (min-width: 768px) {
+    .c-mobile-nav__body {
+      padding: 48px;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    /* Hide the mobile nav on larger viewports even whent it's open on smaller screens */
+    .c-mobile-nav {
+      display: none;
+    }
+  }
+  
+  .c-page {
+    transform: translateX(0%);
+    transition: 0.25s ease;
+  }
+  .has-mobile-nav .c-page {
+    transform: translateX(25%);
+    transition: 0.25s ease;
+  }
+  
+  
+.c-button__opslaan {
+    border: none;
+    background-color: #1589ec;
+    border-radius: 5px;
+    padding: 8px;
+  }
+
+.c-input-gram {
+    padding-bottom: 8px;
+    font-size: 20px;
+  }
+/*
+    Component: menu
+    ---
+    Website main menu
+*/
+.c-menu {
+    fill: #17181a;
+    height: 100%;
+    width: 28px;
+    height: 28px;
+  }
+  
+
+.c-header {
+    display: flex;
+    align-items: center;
+    color: #45494d;
+    justify-content: space-between;
+  }
+  
+  
+  .c-header__menu {
+    background-color: #dbe0e6;
+    padding: 3;
+    border-radius: 5%;
+    align-items: center;
+    text-align: end;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    box-shadow: 0 1px 2px 1px rgba(0, 0, 0, 0.24);
+    display: block;
+  }
+  .c-header__titel {
+    display: block;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+  .c-header__nav {
+    display: none;
+  }
+  
+  @media (min-width: 768px) {
+    .c-header {
+      justify-content: center;
+    }
+    .c-header__titel {
+      text-align: center;
+      justify-content: center;
+    }
+    .c-header__logo {
+      display: flex;
+      justify-content: flex-start;
+    }
+    .c-header__nav {
+      display: block;
+    }
+  
+    .c-header__nav {
+      /* solution 1 */
+      /* margin-left: auto; */
+  
+      /* solution 2 */
+      display: flex;
+      flex-grow: 1;
+      justify-content: flex-end;
+    }
+  }
+  /*
+    Component: Nav
+    ---
+    Main navigation of the site
+*/
+
+.c-nav {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .c-nav__item {
+    display: inline-block;
+    position: relative;
+    color: #2E3133;
+  }
+  
+  .c-nav__item:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #2E3133;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+  
+  .c-nav__item:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+  
+  .c-nav__link {
+    text-decoration: none;
+    font-weight: 600;
+    display: block;
+    padding: 8px 0;
+    color: #2E3133;
+  }
+  
+  @media (min-width: 768px) {
+    .c-nav__list {
+      display: flex;
+    }
+  
+    .c-nav__item--cta {
+      margin-left: 20px;
+    }
+  
+    .c-nav__link {
+      padding: 8px 8px;
+    }
+    .c-nav {
+      font-size: 18px;
+    }
+  }
+  @media (min-width: 922px) {
+    .c-nav__link {
+      padding: 8px 8px;
+    }
+  }
+  @media (min-width: 1024px) {
+    .c-nav__link {
+      padding-left: 16px;
+    }
+  }
+  /*
+    Component: Nav aside
+    ---
+    Main navigation of the site
+*/
+.c-nav-trigger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+    width: 24px;
+    height: 24px;
+  }
+  
+  .c-nav-trigger__svg {
+    fill: #202024;
+    height: 100%;
+  }
+  .c-nav__item--aside {
+    display: inline-block;
+    position: relative;
+    color: #2e3133;
+  }
+  .c-nav--aside {
+    font-size: 18px;
+    line-height: 24px;
+  }
+  
+  .c-nav__link--aside {
+    text-decoration: none;
+    font-weight: 400;
+    display: block;
+    padding: 8px 0;
+    font-size: 22px;
+  }
+  .c-nav__list--aside{
+    text-align: start;
+  }
+  .c-nav__link--aside,
+  .c-nav__link--aside:visited,
+  .c-nav__link--aside:active {
+    color: #2e3133;
+  }
+  
+  .c-nav__link--aside,
+  .c-nav__link--aside:hover,
+  .c-nav__link--aside:focus {
+    color: #2e3133;
+  }
+  
+  /*
+    Component: views
+    ---
+    controle view
+*/
+.c-view-groot {
+    display: none;
+  }
+  
+  @media (min-width: 768px) {
+    .c-view-768 {
+      display: None;
+    }
+    .c-view-groot {
+      display: block;
+    }
+  }
+  /*
+    Component: lead
+    ---
+    Website main lead
+*/
+.c-lead {
+    font-size: 18px;
+    font-weight: 400;
+    padding-bottom: 12px;
+    color: #5c6166;
+    width: 100%;
+  }
+  
+  
+  .c-lead--sm {
+    font-size: 18px;
+    font-weight: 600;
+    padding: 0;
+  }
+  .c-lead--md {
+    font-size: 20px;
+    font-weight: 400;
+    display: inline-block;
+    text-align: left;
+  }
+  
+  .c-lead--lg {
+    font-size: 22px;
+    font-weight: 600;
+    text-align: center;
+    padding-bottom: 8px;
+  }
+  .c-lead--xl {
+    font-size: 26px;
+    font-weight: 400;
+    text-align: center;
+  }
+  .c-lead--xxl {
+    text-align: center;
+    color: #45494d;
+    display: inline-block;
+    justify-content: space-between;
+    font-size: 28px;
+    z-index: 9999999;
+  }
+  
+  @media (min-width: 768px) {
+    .c-lead {
+      font-size: 22px;
+      padding-bottom: 8px;
+    }
+    .c-lead--sm {
+      font-size: 22px;
+    }
+  }
+  
+  /*------------------------------------*\
+  #UTILITIES
+\*------------------------------------*/
+/*
+    Utilities: max-width
+    ---
+    Utility classes to put specific max widths onto elements
+*/
+
+.u-max-width-xs {
+    max-width: 18em !important;
+  }
+  
+  .u-max-width-sm {
+    max-width: 22.5em !important;
+  }
+  
+  .u-max-width-md {
+    max-width: 42em !important;
+  }
+  
+  .u-max-width-lg {
+    max-width: 60em !important;
+  }
+  
+  .u-max-width-xl {
+    max-width: 75em !important;
+  }
+  
+  .u-max-width-none {
+    max-width: none !important;
+  }
+  
+  
